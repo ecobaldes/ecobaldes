@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecobaldes</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <link rel="icon" type="ico" href="icone1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            position: relative;
+        }
+
+        #Contato {
+            position: absolute;
+            top: 50%;
+            left: 65%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            max-width: 400px; 
+            width: 100%;
+            text-align: center;
+        }
+
+        #Contato h2 {
+            margin-bottom: 20px; 
+        }
+
+        #formContato label {
+            display: block;
+            margin-bottom: 10px; 
+        }
+
+        #formContato input,
+        #formContato textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px; 
+            box-sizing: border-box;
+        }
+
+        #formContato button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #formContato button:hover {
+            background-color: #ccc;
+        }
+
+        #mensagemErro,
+        #mensagemSucesso {
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <img src="logosem1.png">
+        <h1>Ecobaldes</h1>
+        <nav>
+           
+            <ul>
+                <li><a href="#" onclick="mudarImagem('home1.jpg'); exibirContato(false);">Home</a></li>
+                <li><a href="#" onclick="mudarImagem('produtos2.jpg'); exibirContato(false);">Produtos</a></li>
+                <li><a href="#" onclick="mudarImagem ('miss.jpg'); exibirContato(false);">Quem Somos</a></li>
+                <li><a href="#" onclick="mudarImagem('contato.jpg'); exibirContato(true);">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <div class="social-icons">
+            <a href="https://wa.me/11969304642/?text=textourl" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://produto.mercadolivre.com.br/MLB-4486922210-balde-18l-preto-com-tampa-_JM#position=1&search_layout=stack&type=item&tracking_id=3d8539c1-7097-4c47-b016-895daa4c2e421" target="_blank"><i class="fa fa-shopping-bag" aria-hiden="true"></i></a>
+        </div>
+    </aside>
+    <main>
+            <img id="imagemPrincipal" src="tela.jpg" onclick="trocarImagem()">
+
+            <section id="Contato">
+                <div class="container">
+                    <h2>Entre em Contato</h2>
+                    <form id="formContato" action="https://formspree.io/f/xqkrboqb" method="POST">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="_replyto" required>
+                        <label for="telefone">Telefone:</label>
+                        <input type="number" id="telefone" name="telefone" required>
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+    </main>
+
+
+     <footer>
+        
+        <p>&copy; 2024 Sandro S.Firmino - Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function exibirContato(exibir) {
+            var paginaContato = document.getElementById('Contato');
+            if (exibir) {
+                paginaContato.style.display = 'block';
+            } else {
+                paginaContato.style.display = 'none';
+            }
+        }
+    </script>
+     <script src="script.js"></script>
+     <script>
+        window.onload = function() {
+            mudarImagem('home1.jpg');
+        };
+     </script>
+     <script>
+        function enviarEmail(event) {
+            event.preventDefault();
+
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+            var mensagem = document.getElementById('mensagem').value;
+            
+
+            if (nome && email && telefone && mensagem) {
+                document.getElementById('mensagemSucesso').style.display = 'block';
+                document.getElementById('formContato').reset();
+            } else {
+                document.getElementById('mensagemErro').style.display = 'block'; 
+            }
+        }
+     </script>
+
+
+</body>
+</html>

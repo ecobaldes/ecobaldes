@@ -1,0 +1,150 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+
+header {
+    background-image: url('planodefundotop.png');
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+ 
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    float: left;
+}
+
+h1 {
+    margin-left: 20px;
+}
+
+.imagem-inicial {
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.imagem-inicial img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    background-image: url('text1.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+
+
+
+#imagemPrincipal {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+h1 {
+    font-family:'aAlleyGarden'; 
+    color: #000000;
+    padding: 10px;
+    text-align: left;
+    margin-left: 30px;
+    font-size:60px;
+}
+
+@font-face {
+    font-family: 'aAlleyGarden';
+    src: url('aAlleyGarden.otf') format('truetype');
+}
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+
+footer {
+    background-color: #a1c7f1;
+    color: #0c5506;
+    text-align: center;
+    padding: 10px;
+}
+
+.social-icons {
+    margin-left: 25px;
+    font-size: 45px;
+    align-items: left;
+}
+
+.pagina-contato {
+    display: flex;
+    justify-content: center;
+}
+
+.caixa-contato {
+    background-color:#333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: 20px;
+    text-align: right;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:whitesmoke;
+    transition: color 0.3s;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    color:blueviolet;
+}
